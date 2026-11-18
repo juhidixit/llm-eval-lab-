@@ -63,5 +63,6 @@ jobs:
           cache: pip
       - run: pip install -e .
       - run: python experiments/judge_calibration.py --cache replay --judges $(cat results/judge_calibration/JUDGES)
+      - run: cp results/judge_calibration/summary.md /tmp/committed_summary.md
       - run: python experiments/analyze_calibration.py
-      - run: git diff --exit-code results/judge_calibration/summary.md
+      - run: python experiments/check_summary.py /tmp/committed_summary.md results/judge_calibration/summary.md
