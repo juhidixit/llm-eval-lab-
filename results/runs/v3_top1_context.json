@@ -1,0 +1,2264 @@
+{
+ "suite": "rag_qa",
+ "created": "2026-11-18T07:22:27+00:00",
+ "dataset": {
+  "path": "data/golden/rag_qa_golden.jsonl",
+  "version": "e7be3a5568476c92",
+  "n": 100
+ },
+ "system": {
+  "model": "qwen2.5-3b",
+  "prompt": "prompts/rag_qa_v1.txt",
+  "max_contexts": 1,
+  "max_tokens": 150,
+  "hash": "8642b406c5a8"
+ },
+ "judge": null,
+ "summary": {
+  "answered": {
+   "mean": 0.7125,
+   "ci": [
+    0.6125,
+    0.8125
+   ],
+   "n": 80
+  },
+  "grounded": {
+   "mean": 0.81,
+   "ci": [
+    0.73,
+    0.88
+   ],
+   "n": 100
+  },
+  "lexical_support": {
+   "mean": 0.8341354927836029,
+   "ci": [
+    0.7933945243387995,
+    0.8715549453670758
+   ],
+   "n": 100
+  },
+  "refusal_correct": {
+   "mean": 0.77,
+   "ci": [
+    0.68975,
+    0.85
+   ],
+   "n": 100
+  },
+  "refused_unanswerable": {
+   "mean": 1.0,
+   "ci": [
+    1.0,
+    1.0
+   ],
+   "n": 20
+  },
+  "token_f1": {
+   "mean": 0.3744747857908278,
+   "ci": [
+    0.3253334613275883,
+    0.4228408249539262
+   ],
+   "n": 80
+  }
+ },
+ "ops": {
+  "latency_p50_s": 4.364000000000001,
+  "latency_p95_s": 13.992090000000001,
+  "prompt_tokens_mean": 194.98,
+  "completion_tokens_mean": 49.71,
+  "judge_latency_total_s": 0.0,
+  "projected_cost_per_1k_usd": 0.44353000000000004,
+  "priced_as": "claude-haiku-4-5"
+ },
+ "cache": {
+  "generator_hits": 100,
+  "generator_misses": 0,
+  "judge_hits": 0,
+  "judge_misses": 0
+ },
+ "examples": [
+  {
+   "id": "rqa-15147",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 0.0,
+    "answered": 0.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0,
+    "token_f1": 0.01351351351351351
+   },
+   "prompt_tokens": 161,
+   "completion_tokens": 8,
+   "latency_s": 2.3305,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15315",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "To get rid of ticks from dogs, you should check inside and behind his ears and around his eyes, all favorite tick hiding places. To remove a tick, use a pair of tweezers to grasp the head of the tick where it attaches to the skin. Wear gloves if you plan to use your fingers to remove the tick. If you yank the tick away too quickly, you might leave part of the tick's mouth behind, which can cause an infection.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.8695652173913043,
+    "token_f1": 0.6298342541436462
+   },
+   "prompt_tokens": 261,
+   "completion_tokens": 94,
+   "latency_s": 10.1738,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-14373",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Based on the given passages, if your male coworker is flirting with you, you should pay attention to his body language and words. If he seems uncomfortable or suggests that you not continue flirting with him, it might be a good idea to stop. Additionally, you should avoid any physical contact that could be misconstrued as fondling, as this could lead to misunderstandings or potential consequences, such as losing your job.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 0.0,
+    "lexical_support": 0.48484848484848486,
+    "token_f1": 0.452054794520548
+   },
+   "prompt_tokens": 237,
+   "completion_tokens": 85,
+   "latency_s": 9.0468,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-14319",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Deoxyribonucleic acid (DNA) is a nucleic acid that contains the genetic instructions used in the development and functioning of all known living organisms and some viruses. The main role of DNA molecules is the long-term storage of information.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0,
+    "token_f1": 0.4375
+   },
+   "prompt_tokens": 196,
+   "completion_tokens": 49,
+   "latency_s": 6.1853,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15097",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "PSA levels refer to the level of prostate-specific antigen in a man's blood. The PSA test measures this level, which is often elevated in men with prostate cancer. The results are usually reported as nanograms of PSA per milliliter (ng/mL) of blood. The test involves sending a blood sample to a laboratory for analysis.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.8484848484848485,
+    "token_f1": 0.5736434108527132
+   },
+   "prompt_tokens": 259,
+   "completion_tokens": 68,
+   "latency_s": 7.8312,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-12367",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Children learn about floating and sinking, measuring, more and less, and creativity through water play. They also improve their gross motor skills by running and playing with water.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.9444444444444444,
+    "token_f1": 0.372093023255814
+   },
+   "prompt_tokens": 252,
+   "completion_tokens": 33,
+   "latency_s": 4.4507,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-12391",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 0.0,
+    "answered": 0.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0,
+    "token_f1": 0.12048192771084337
+   },
+   "prompt_tokens": 142,
+   "completion_tokens": 8,
+   "latency_s": 1.5216,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15302",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "The effect of a carbon footprint is to measure the environmental impact of a person's lifestyle, specifically the amount of carbon dioxide and other greenhouse gases produced as a result of daily activities. Reducing one's carbon footprint can be achieved by making changes to one's daily life, even small changes can make a significant difference.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.7428571428571429,
+    "token_f1": 0.4285714285714286
+   },
+   "prompt_tokens": 197,
+   "completion_tokens": 63,
+   "latency_s": 6.235,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15338",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Goodwill is important in business as it can increase a company's customer base, retain existing clients, attract investors, and potentially future buyers.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.7333333333333333,
+    "token_f1": 0.3461538461538462
+   },
+   "prompt_tokens": 128,
+   "completion_tokens": 28,
+   "latency_s": 3.32,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-14418",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "The name Teresa has several meanings and origins based on the given passages:\n\n- Greek: Reap; from Therasia\n- American: Reap; from Therasia\n- Italian: Harvester\n- Spanish: Name of two popular saints 'Teresa of Avila' and 'Therese of Lisieux'\n\nThe meaning \"Harvester\" is consistent across the Italian and Spanish meanings provided.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.7666666666666667,
+    "token_f1": 0.5523809523809523
+   },
+   "prompt_tokens": 285,
+   "completion_tokens": 82,
+   "latency_s": 9.1142,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-14392",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "The difference between essential and nonessential amino acids lies in their necessity for adults. Essential amino acids are those that adults need to obtain through their diet because their bodies cannot produce them. In contrast, nonessential amino acids can be synthesized by the body and do not need to be obtained through diet. For adults, the eight essential amino acids are valine, isoleucine, leucine, lysine, methionine, phenylalanine, threonine, and tryptophan. Histidine is only considered essential for infants.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 0.0,
+    "lexical_support": 0.5918367346938775,
+    "token_f1": 0.5683060109289617
+   },
+   "prompt_tokens": 223,
+   "completion_tokens": 111,
+   "latency_s": 11.0896,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15275",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Examples of potential energy include:\n1. The gravitational potential energy of a book resting on a high shelf.\n2. The elastic potential energy stored in a compressed spring.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 0.0,
+    "lexical_support": 0.23529411764705882,
+    "token_f1": 0.25925925925925924
+   },
+   "prompt_tokens": 182,
+   "completion_tokens": 33,
+   "latency_s": 3.9677,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15300",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 0.0,
+    "answered": 0.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0,
+    "token_f1": 0.06349206349206349
+   },
+   "prompt_tokens": 231,
+   "completion_tokens": 8,
+   "latency_s": 2.3717,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15210",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "The benefits of MSM powder, as described in the given passages, include helping to get oxygen into the blood more efficiently and increasing energy levels by making the cell walls more permeable.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.7894736842105263,
+    "token_f1": 0.4827586206896552
+   },
+   "prompt_tokens": 145,
+   "completion_tokens": 36,
+   "latency_s": 4.003,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-12308",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "To properly clean your hair, follow these steps based on the given passages:\n\n6) Rinse the hair completely and, if the hair is longer, use a wide-tooth comb to remove tangles and smooth the hair.\n7) Apply a conditioner in the same manner you applied the shampoo. Allow the conditioner to remain on for a few minutes.\n8) Rinse the hair with cool water and comb through it again.\n9) Dry the hair with a towel using a patting or stroking motion. Never rub the hair back and forth or in circles with a towel as this will cause damage to the hair.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.9056603773584906,
+    "token_f1": 0.5607476635514019
+   },
+   "prompt_tokens": 209,
+   "completion_tokens": 124,
+   "latency_s": 11.8949,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-14421",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "To build a lean-to shed, follow these steps based on the given passages:\n\n1. Prepare the site with a 4-inch layer of compacted gravel.\n2. Cut two 4 x 4 skids at 70 2/4 inches.\n3. Set and level the skids according to the shed building plans.\n4. Cut two 2 x 6 rim joists at 7 3/4 inches and six joists at 44 3/4 inches.\n5. Assemble the floor and set it on the skids as shown in the floor framing section of the lean to shed plans.\n6. Check for square and anchor the frame to the skids with four joist clip angles.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.8363636363636363,
+    "token_f1": 0.6606334841628959
+   },
+   "prompt_tokens": 236,
+   "completion_tokens": 149,
+   "latency_s": 14.1993,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-14300",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Based on the given passage, it is mentioned that certain automotive mechanics and technicians paid on a flat-rate or flag-rate are entitled to overtime under the FLSA (Fair Labor Standards Act). However, the passage does not provide comprehensive information on how all automotive technicians are typically paid or whether they are generally entitled to overtime wages. Therefore, while we know some are entitled to overtime, we cannot definitively state how all automotive technicians get paid based on the given information.",
+   "metrics": {
+    "refusal_correct": 0.0,
+    "answered": 0.0,
+    "grounded": 0.0,
+    "lexical_support": 0.5333333333333333,
+    "token_f1": 0.31016042780748665
+   },
+   "prompt_tokens": 190,
+   "completion_tokens": 93,
+   "latency_s": 9.045,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-14318",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "The difference between succinate and tartrate, as mentioned in the passages, is that succinate (Toprol) is the long-acting form of metoprolol, while tartrate (Lopressor) is the shorter-acting form. Toprol can be taken once a day, whereas Lopressor is usually taken at least twice a day.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.7307692307692307,
+    "token_f1": 0.32167832167832167
+   },
+   "prompt_tokens": 241,
+   "completion_tokens": 76,
+   "latency_s": 7.9805,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15288",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 0.0,
+    "answered": 0.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0,
+    "token_f1": 0.028169014084507043
+   },
+   "prompt_tokens": 158,
+   "completion_tokens": 8,
+   "latency_s": 1.5061,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15254",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "An adverb clause is a dependent clause that modifies a verb, adjective, or another adverb. It usually modifies the verb. Adverb clauses are introduced by subordinate conjunctions including after, although, as, as if, before, because, if, since, so that, than, though, unless, until, when, where, and while.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0,
+    "token_f1": 0.6201550387596899
+   },
+   "prompt_tokens": 169,
+   "completion_tokens": 71,
+   "latency_s": 7.3003,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15529",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Based on the given passage, salary exchange allows both employers and employees to save money by the employer paying a reduced salary to the employee in exchange for the employee contributing to their pension. This reduced salary results in lower National Insurance Contributions (NICs) for the employer.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.7307692307692307,
+    "token_f1": 0.42622950819672134
+   },
+   "prompt_tokens": 220,
+   "completion_tokens": 53,
+   "latency_s": 5.8648,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-14458",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "To sew a zipper gusset, follow these steps based on the given passages:\n\n1. Measure out 2 inches from the main dot on the fabric.\n2. Make a second dot one inch to the left of the main dot.\n3. Divide the number of inches needed for the gusset (2 inches) by 2, as you are making two gussets for each side seam.\n4. Add 2 total inches to the left side of your dress and 2 total inches to the right side.\n5. Make a casing in the side seams by stitching the outer edge of the gusset and the back side seam.\n6. Insert the zipper boning into the casing.\n7. Push the seam allowance to the",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.864406779661017,
+    "token_f1": 0.30612244897959184
+   },
+   "prompt_tokens": 248,
+   "completion_tokens": 150,
+   "latency_s": 14.1819,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15397",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 0.0,
+    "answered": 0.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0,
+    "token_f1": 0.03508771929824562
+   },
+   "prompt_tokens": 197,
+   "completion_tokens": 8,
+   "latency_s": 2.0579,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-12182",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "If your Sperry shoes get wet, you should use a leather conditioner to help revitalize the leather and infuse moisture back into it. Once the shoes are dry, you can then reassemble them.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.7222222222222222,
+    "token_f1": 0.4444444444444444
+   },
+   "prompt_tokens": 162,
+   "completion_tokens": 41,
+   "latency_s": 4.468,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15103",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "To make a graph for your research, you should follow these steps based on the given passages:\n\n1. Collect your data. Ensure that the data you collect is relevant to your research and can be represented in a bar graph. For example, if your research is about rainfall in a city, you would need to gather the amount of rainfall for each month from February 2005 to February 2006.\n\n2. Organize your data. Once you have collected the data, organize it in a way that it can be easily represented in a bar graph. This might involve sorting the data by month or by the amount of rainfall.\n\n3. Choose a bar graph. A bar graph is suitable for showing comparisons among categories, such as",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 0.0,
+    "lexical_support": 0.5517241379310345,
+    "token_f1": 0.3842794759825328
+   },
+   "prompt_tokens": 218,
+   "completion_tokens": 150,
+   "latency_s": 14.3421,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-14396",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 0.0,
+    "answered": 0.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0,
+    "token_f1": 0.03508771929824561
+   },
+   "prompt_tokens": 221,
+   "completion_tokens": 8,
+   "latency_s": 2.2395,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-14404",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "The body systems work together by coordinating their functions to maintain homeostasis, which is the state of balance within the body. For example, the skeletal system provides structure and support, while the muscular system enables movement. The digestive system breaks down food, and the respiratory system exchanges gases. The circulatory system delivers nutrients and oxygen throughout the body, while the urinary system removes waste. The endocrine system regulates hormones, and the lymphatic system supports the immune system. The urinary system removes waste, and the reproductive system ensures reproduction. The nervous system controls and coordinates all body activities, and the immune system protects the body from pathogens. All these systems work together to ensure the body functions efficiently and healthily.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 0.0,
+    "lexical_support": 0.3048780487804878,
+    "token_f1": 0.35164835164835173
+   },
+   "prompt_tokens": 143,
+   "completion_tokens": 141,
+   "latency_s": 13.0447,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15180",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "To grill pork chops as per the instructions from Allrecipes.com:\n\n1. Preheat an outdoor grill to medium heat and lightly oil the grate.\n2. In a bowl, combine seasoned salt, black pepper, garlic powder, onion powder, paprika, Worcestershire sauce, and smoke flavoring.\n3. Rinse the pork chops and sprinkle both sides with the spice mixture.\n\nFollow these steps to prepare your pork chops for grilling.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.813953488372093,
+    "token_f1": 0.6293706293706294
+   },
+   "prompt_tokens": 169,
+   "completion_tokens": 89,
+   "latency_s": 8.8237,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-12287",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "The nervous system and the endocrine system have some key differences and similarities:\n\nSimilarities:\n- Both systems are involved in the regulation of bodily functions.\n- Both systems work to maintain homeostasis in the body.\n\nDifferences:\n- The nervous system is made up of neuron cells, while the endocrine system is made up of glands.\n- Transmission in the nervous system occurs through electrochemical pulses, whereas in the endocrine system, it occurs through chemical signals known as hormones.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 0.0,
+    "lexical_support": 0.52,
+    "token_f1": 0.5070422535211268
+   },
+   "prompt_tokens": 153,
+   "completion_tokens": 96,
+   "latency_s": 10.5415,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15543",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "The overall average high temperature in Tallahassee, Florida is 79 degrees.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.875,
+    "token_f1": 0.326530612244898
+   },
+   "prompt_tokens": 141,
+   "completion_tokens": 17,
+   "latency_s": 2.1974,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-12177",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "To quickly get rid of mice, you need to take immediate action. This involves sealing entry points, cleaning up food sources, and using traps or other deterrents to eliminate the mice from your home.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 0.0,
+    "lexical_support": 0.4782608695652174,
+    "token_f1": 0.4464285714285714
+   },
+   "prompt_tokens": 148,
+   "completion_tokens": 40,
+   "latency_s": 4.5241,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15243",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Severe osteoporosis can be indicated by sudden, severe back pain, especially in older women, which is a sign of spinal compression fractures due to weak bones.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.8823529411764706,
+    "token_f1": 0.2972972972972973
+   },
+   "prompt_tokens": 224,
+   "completion_tokens": 33,
+   "latency_s": 4.547,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15301",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "If you e-filed your taxes, you should be able to get a refund status within 72 hours. If you mail your taxes, you will have to wait 3 or 4 weeks after mailing in your taxes. For both e-filed and mailed taxes, it takes time for the IRS to process your taxes, so you should give them adequate time before checking on the status of your refund.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.9142857142857143,
+    "token_f1": 0.5974025974025974
+   },
+   "prompt_tokens": 230,
+   "completion_tokens": 82,
+   "latency_s": 8.8005,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15542",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "A reverse raffle is a raffle but backwards. Your entry ticket has a number from 1 to approximately 55. Tickets are $50 each and a table consists of 20 individuals, which constitutes one complete ticket at $1000. There are two $500 prizes (one for the early bird drawing and one for the first ticket pulled). There are a total of twenty individuals in the table.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.9722222222222222,
+    "token_f1": 0.39160839160839156
+   },
+   "prompt_tokens": 190,
+   "completion_tokens": 88,
+   "latency_s": 9.8152,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15395",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "To make panko crumbs, follow these steps based on the given passages:\n\n1. Preheat an oven to 300 degrees F (150 degrees C).\n2. Push torn pieces of bread through the shredding disk of a food processor to make coarse crumbs.\n3. Spread the crumbs on a baking sheet.\n4. Bake in the preheated oven until the crumbs are dry but not toasted, for about 6 to 8 minutes.\n5. Shake the sheet twice during baking to ensure the crumbs are evenly dried.\n6. Remove from the oven and cool completely.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.8958333333333334,
+    "token_f1": 0.6818181818181818
+   },
+   "prompt_tokens": 220,
+   "completion_tokens": 119,
+   "latency_s": 12.0392,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-12334",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "The weighted average method of costing inventory assigns an average cost to each piece of inventory when it is sold. This average cost is determined by taking the average of all inventories currently available. Since inventory prices can fluctuate, the weighted average cost also changes over time.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.8387096774193549,
+    "token_f1": 0.4146341463414634
+   },
+   "prompt_tokens": 227,
+   "completion_tokens": 53,
+   "latency_s": 6.1233,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-12218",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 0.0,
+    "answered": 0.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0,
+    "token_f1": 0.04878048780487805
+   },
+   "prompt_tokens": 176,
+   "completion_tokens": 8,
+   "latency_s": 2.013,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-14355",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "The benefits of a water pick include helping to keep teeth, gums, mouth, and overall body healthier by eliminating germs and plaque that is tough to remove with a toothbrush.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 0.0,
+    "lexical_support": 0.6666666666666666,
+    "token_f1": 0.3114754098360656
+   },
+   "prompt_tokens": 200,
+   "completion_tokens": 36,
+   "latency_s": 4.2616,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-12423",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "The diaphragm muscle, which is the principal muscle of breathing, contracts to take air into the lungs. It moves down from the bottom of your rib cage towards your abdominal region when it contracts. When the diaphragm relaxes, it allows the air to be expelled from the lungs.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.9166666666666666,
+    "token_f1": 0.4878048780487805
+   },
+   "prompt_tokens": 197,
+   "completion_tokens": 59,
+   "latency_s": 6.3054,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15533",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Based on the given passages, factors that can cause oily skin include genetic inheritance. While diet can aggravate acne, it does not directly cause oily skin. Oily skin is hereditary, meaning if your parents have oily skin, you are more likely to have it as well. However, if your oily skin comes and goes, it may be more related to hormonal shifts in your body.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 0.0,
+    "lexical_support": 0.6486486486486487,
+    "token_f1": 0.5072463768115941
+   },
+   "prompt_tokens": 266,
+   "completion_tokens": 78,
+   "latency_s": 8.4023,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15390",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "To remove the rear door panel in a 2006 Chevy HHR, you will need to:\n\n1. Remove the two screws located inside the door pull cup.\n2. Remove the screw in the middle of the inside door handle.\n3. Remove the pin that holds the panel in place.\n4. Use a door panel removal tool to pry the door panel off the HHR rear door.\n5. Remove all screws and clips in the door panel.\n6. Gently pull the panel away from the frame.\n7. Remove any wiring connections, and the panel will come off the frame.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.9482758620689655,
+    "token_f1": 0.7654320987654322
+   },
+   "prompt_tokens": 239,
+   "completion_tokens": 121,
+   "latency_s": 11.9421,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15206",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "To clean the dryer vent, follow these steps based on the given passages:\n\n1. Locate the dryer vent cover on the outside of your house.\n2. Remove the cover; the vent duct should slide right out if it isn't fastened or sealed to the home's exterior.\n3. Using a dryer vent brush, remove the lint from inside the hole.\n4. Remove the vent from the back of the dryer by unscrewing the vent clamp and sliding the vent out of the elbow-shaped joint.\n5. Using a dryer vent brush, remove the lint from the vent as well as the hole in the back of the dryer.\n6. Reconnect the vent and move the dryer back against the wall.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.9516129032258065,
+    "token_f1": 0.6972477064220183
+   },
+   "prompt_tokens": 246,
+   "completion_tokens": 142,
+   "latency_s": 14.2372,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-12422",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Based on the given passages, the weather in Wellesley for Tuesday, August 23, is forecasted to be 82 degrees with sunny skies, a 39% chance of rain, and winds from the North-Northwest at 10 mph. For Wednesday, August 24, the forecast is 79 degrees with sunny skies, a 28% chance of rain, and winds from the North-Northeast at 5 mph.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.7419354838709677,
+    "token_f1": 0.4049079754601227
+   },
+   "prompt_tokens": 178,
+   "completion_tokens": 97,
+   "latency_s": 9.5293,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15379",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 0.0,
+    "answered": 0.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0,
+    "token_f1": 0.05
+   },
+   "prompt_tokens": 165,
+   "completion_tokens": 8,
+   "latency_s": 1.8171,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15453",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 0.0,
+    "answered": 0.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0,
+    "token_f1": 0.051948051948051945
+   },
+   "prompt_tokens": 193,
+   "completion_tokens": 8,
+   "latency_s": 1.9806,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15262",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "To cook a frozen pork loin roast in the oven, follow these steps:\n\n1. Defrost the pork loin roast first if you do not have time to defrost it beforehand.\n2. If defrosting is not possible, preheat your oven to 250 F.\n3. Place the roast in the oven and cook for about 1 hour.\n4. Take the roast out, season it, and return it to the oven.\n5. Preheat your oven to 350 F.\n6. Cook the roast for 1.5 - 3 hours, depending on its size, ensuring it is cooked all the way through.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.7291666666666666,
+    "token_f1": 0.48623853211009166
+   },
+   "prompt_tokens": 274,
+   "completion_tokens": 132,
+   "latency_s": 13.5138,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15535",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "The floor of a tropical rainforest has characteristics where plants and animals that die quickly decompose, offering rich nutrients for other plants to grow.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.8,
+    "token_f1": 0.30769230769230765
+   },
+   "prompt_tokens": 202,
+   "completion_tokens": 28,
+   "latency_s": 4.0787,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-14366",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "The proper way to dispose of a faded or worn American flag is to remove the blue field from the flag and then burn the blue field in a peaceful manner. The ashes should be buried.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.7222222222222222,
+    "token_f1": 0.5428571428571429
+   },
+   "prompt_tokens": 160,
+   "completion_tokens": 38,
+   "latency_s": 4.2773,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15513",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "To plan a trip to Germany, you can start by checking out budget travel tips and savings options such as discount flights, cheap hotels and hostels, and budget-friendly restaurants and public transportation. It's also helpful to know visa requirements, what to see in Germany, and how to get around the country.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 0.0,
+    "lexical_support": 0.6333333333333333,
+    "token_f1": 0.42647058823529416
+   },
+   "prompt_tokens": 191,
+   "completion_tokens": 61,
+   "latency_s": 6.7834,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-12335",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "The benefits of drinking clove tea include soothing the senses and relieving stress in the body. It also offers skin benefits. Side effects are not mentioned in the given passages.",
+   "metrics": {
+    "refusal_correct": 0.0,
+    "answered": 0.0,
+    "grounded": 0.0,
+    "lexical_support": 0.5,
+    "token_f1": 0.3673469387755102
+   },
+   "prompt_tokens": 161,
+   "completion_tokens": 35,
+   "latency_s": 4.2588,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15402",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 0.0,
+    "answered": 0.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0,
+    "token_f1": 0.02531645569620253
+   },
+   "prompt_tokens": 270,
+   "completion_tokens": 8,
+   "latency_s": 2.5211,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15332",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "The given passage does not contain specific information about the political, economic, and social effects of immigration on the United States. Therefore, the response is:\n\nUnable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 0.0,
+    "answered": 0.0,
+    "grounded": 0.0,
+    "lexical_support": 0.21428571428571427,
+    "token_f1": 0.1726618705035971
+   },
+   "prompt_tokens": 157,
+   "completion_tokens": 38,
+   "latency_s": 4.0329,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-14323",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 0.0,
+    "answered": 0.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0,
+    "token_f1": 0.02352941176470588
+   },
+   "prompt_tokens": 177,
+   "completion_tokens": 8,
+   "latency_s": 1.9552,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-14470",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "The drawer for on the bottom of the oven stove is called a \"warming drawer.\"",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 0.0,
+    "lexical_support": 0.5714285714285714,
+    "token_f1": 0.27777777777777773
+   },
+   "prompt_tokens": 162,
+   "completion_tokens": 18,
+   "latency_s": 2.8104,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-12228",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 0.0,
+    "answered": 0.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0,
+    "token_f1": 0.12195121951219512
+   },
+   "prompt_tokens": 183,
+   "completion_tokens": 8,
+   "latency_s": 1.9294,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-14357",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "To keep birds from building a nest on your porch, you can attach bird netting to the eves and the top of the porch around the perimeter of your porch using a staple gun. This will prevent the birds from reaching those spaces they often choose to build their nests.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.84,
+    "token_f1": 0.483221476510067
+   },
+   "prompt_tokens": 210,
+   "completion_tokens": 55,
+   "latency_s": 6.3351,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-12183",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Republicans use a winner-take-all system to allocate delegates in their presidential nominating procedure.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 0.0,
+    "lexical_support": 0.2222222222222222,
+    "token_f1": 0.7857142857142857
+   },
+   "prompt_tokens": 154,
+   "completion_tokens": 18,
+   "latency_s": 2.4347,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15320",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 0.0,
+    "answered": 0.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0,
+    "token_f1": 0.024096385542168676
+   },
+   "prompt_tokens": 215,
+   "completion_tokens": 8,
+   "latency_s": 2.1369,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15143",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "The main difference between elements, compounds, and mixtures lies in the ease with which their components can be separated. Elements are pure substances composed of only one type of atom. Compounds, on the other hand, are pure substances composed of two or more different types of atoms chemically bonded together. Mixtures, such as the atmosphere, contain two or more substances that are relatively easy to separate, but the individual components cannot be chemically combined to form a new substance.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 0.0,
+    "lexical_support": 0.52,
+    "token_f1": 0.5340909090909091
+   },
+   "prompt_tokens": 190,
+   "completion_tokens": 95,
+   "latency_s": 9.6739,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15583",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Based on the given passage, the brats should cook for approximately 30 minutes at 350 F in the oven, with the top of the casserole dish removed.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0,
+    "token_f1": 0.6285714285714286
+   },
+   "prompt_tokens": 225,
+   "completion_tokens": 38,
+   "latency_s": 4.9529,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15107",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 0.0,
+    "answered": 0.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0,
+    "token_f1": 0.03361344537815126
+   },
+   "prompt_tokens": 145,
+   "completion_tokens": 8,
+   "latency_s": 1.6415,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15546",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Based on the given passages, EZ-Pass charges work by initially charging a certain amount from your credit card to establish a balance, which can be $100 for the EZ-Tag and $25 for the TX-Tag. This balance is then used to deduct tolls. When the balance goes below a certain value ($10 for the TX-Tag), they charge your credit card another $100 or $25 to increase your balance.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.8235294117647058,
+    "token_f1": 0.6131386861313869
+   },
+   "prompt_tokens": 182,
+   "completion_tokens": 94,
+   "latency_s": 9.1961,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-14391",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "To prepare a blood slide, you will need to follow these steps:\n\n1. Obtain a slide and a cover slip.\n2. Sterilize the needle with a flame.\n3. Prick your finger to obtain a small amount of blood.\n4. Place a drop of blood on the center of the slide.\n5. Carefully place the cover slip over the blood drop.\n\nPlease note that this process should be done under adult supervision, and it is not typically used for casual observation of red blood cells, but rather for more detailed microscopic examination.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 0.0,
+    "lexical_support": 0.42,
+    "token_f1": 0.3315508021390374
+   },
+   "prompt_tokens": 168,
+   "completion_tokens": 110,
+   "latency_s": 11.1067,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-12342",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "To get a free VoIP service and phone number, you can look for free or paid VoIP services that offer free DID (incoming numbers) from around the world. These services typically charge a flat yearly rate or a monthly fee for the DID numbers.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.7307692307692307,
+    "token_f1": 0.5203252032520325
+   },
+   "prompt_tokens": 240,
+   "completion_tokens": 51,
+   "latency_s": 6.3939,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15383",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "We should serve others because the Christian life involves serving others, showing love and kindness to everyone, even those who do not treat us well. This service can be demonstrated in various ways, such as providing a Second Mile Service, where we go the extra mile for our customers and employers, helping them in ways they appreciate and find useful.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.7714285714285715,
+    "token_f1": 0.4727272727272728
+   },
+   "prompt_tokens": 225,
+   "completion_tokens": 67,
+   "latency_s": 8.2613,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15369",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 0.0,
+    "answered": 0.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0,
+    "token_f1": 0.016260162601626018
+   },
+   "prompt_tokens": 269,
+   "completion_tokens": 8,
+   "latency_s": 2.4959,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15539",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "The main difference between a sirloin steak and a porterhouse steak is that porterhouse steaks are cut from further back on the sirloin, resulting in a portion that contains a bit more of the tenderloin or fillet. This leads to porterhouse steaks often being larger in size and potentially more expensive than sirloin steaks. Both porterhouse and T-bone cuts of steaks are prepared in a similar way, involving a vertical cut that encompasses elements of both the fillet and front of the sirloin (what Americans call the short loin) on either side of a distinctive T-shaped bone.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.7894736842105263,
+    "token_f1": 0.5033112582781457
+   },
+   "prompt_tokens": 204,
+   "completion_tokens": 127,
+   "latency_s": 13.9821,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-14327",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 0.0,
+    "answered": 0.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0,
+    "token_f1": 0.0
+   },
+   "prompt_tokens": 157,
+   "completion_tokens": 8,
+   "latency_s": 1.8092,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-14433",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "The passage does not provide a direct comparison between Vietnam and India, but it does mention that the trends in India are more typical compared to Vietnam. Additionally, it notes that the early focus in Vietnam was on getting children into school, ensuring equitable access to education, and addressing resource and facility issues. In contrast, the education system in Vietnam is described as relatively equitable, meaning poorer children have the same opportunities as those who are better-off.",
+   "metrics": {
+    "refusal_correct": 0.0,
+    "answered": 0.0,
+    "grounded": 0.0,
+    "lexical_support": 0.5714285714285714,
+    "token_f1": 0.4835164835164835
+   },
+   "prompt_tokens": 210,
+   "completion_tokens": 87,
+   "latency_s": 9.8189,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-14360",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 0.0,
+    "answered": 0.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0,
+    "token_f1": 0.038461538461538464
+   },
+   "prompt_tokens": 201,
+   "completion_tokens": 8,
+   "latency_s": 1.9807,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15238",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Visual merchandising is a crucial aspect of retail that involves the strategic placement and presentation of products in a store to attract and engage customers. The visual merchandiser understands the retail strategy and goals of the retailer, and uses this knowledge to project these elements in the store. Traditionally, retailers relied on advertising as the primary method to attract customers. However, visual merchandising has become an integral part of retail strategy, enhancing the in-store experience and directly engaging with consumers through product presentation and layout.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 0.0,
+    "lexical_support": 0.4230769230769231,
+    "token_f1": 0.39306358381502887
+   },
+   "prompt_tokens": 151,
+   "completion_tokens": 101,
+   "latency_s": 10.2464,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15108",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "To change the sleep time on your computer, you can follow these steps:\n\n1. Click the Start Menu to load the Help Center.\n2. Enter \"Power Management Settings\" in the search field.\n3. Click \"Change Power Management Settings.\"\n4. On the left side of the window, click \"Change when the computer sleeps.\"\n5. Change the \"Put the computer to sleep\" entry with the desired amount of time you will allow the computer to sit idle before it sleeps, or automatically turn off its option to enter into Sleep mode.\n\nThis process is applicable for Windows 7. For other versions of Windows, the steps might slightly vary.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.85,
+    "token_f1": 0.641025641025641
+   },
+   "prompt_tokens": 219,
+   "completion_tokens": 130,
+   "latency_s": 12.4409,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15158",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 0.0,
+    "answered": 0.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0,
+    "token_f1": 0.02631578947368421
+   },
+   "prompt_tokens": 160,
+   "completion_tokens": 8,
+   "latency_s": 1.6017,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15308",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Based on the given passage, homemade texture or decorative paint rollers can work better than commercial ones because they can apply a random pattern of texture to walls, which is useful for achieving faux finishes. Commercial texture rollers, on the other hand, apply paint with a set pattern. Therefore, homemade rollers can better suit applications that require a random, decorative pattern.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.7631578947368421,
+    "token_f1": 0.42372881355932196
+   },
+   "prompt_tokens": 139,
+   "completion_tokens": 70,
+   "latency_s": 6.9944,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-12273",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "To guard a tall person in basketball when they are near the three-point line, stay as close as possible to them. Actively slide your feet from side to side to stay near your opponent and minimize their shot opportunities.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.9047619047619048,
+    "token_f1": 0.7142857142857143
+   },
+   "prompt_tokens": 137,
+   "completion_tokens": 44,
+   "latency_s": 4.8894,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15149",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "To peel potatoes fast, place washed whole, unpeeled potatoes into a pot and cover with cold water. After boiling them, immediately transfer them to cold ice water. This \"shocking\" process helps release the skin from the flesh, making the potato easier to peel.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.7586206896551724,
+    "token_f1": 0.4251968503937008
+   },
+   "prompt_tokens": 145,
+   "completion_tokens": 55,
+   "latency_s": 5.5883,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15576",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 0.0,
+    "answered": 0.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0,
+    "token_f1": 0.05714285714285715
+   },
+   "prompt_tokens": 184,
+   "completion_tokens": 8,
+   "latency_s": 1.7674,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15478",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Outdoor hiking promotes mental health and is more varied than many other types of exercise, particularly those undertaken in a gym. It is also inexpensive and easy to start, allowing people of all fitness levels to participate. Additionally, discovering new hiking spots can help people get to know an area.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.7575757575757576,
+    "token_f1": 0.376068376068376
+   },
+   "prompt_tokens": 198,
+   "completion_tokens": 56,
+   "latency_s": 6.002,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-15577",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "Based on the given passage, Global Egalitarianism is examined as a free-standing conception of global justice. The passage suggests that neither equality of resources nor equality of opportunity represents a workable principle of global justice. This is because it is difficult to measure the resources or opportunities available to people in different societies in a neutral way as between cultures, and such neutrality seems indispensable in a global principle of justice.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.8974358974358975,
+    "token_f1": 0.5844155844155844
+   },
+   "prompt_tokens": 218,
+   "completion_tokens": 81,
+   "latency_s": 8.5252,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-14375",
+   "tags": [
+    "answerable"
+   ],
+   "answer": "To cook brats based on the given passages, follow these steps:\n\n1. Preheat an outdoor grill for medium-high heat.\n2. When hot, lightly oil the grate.\n3. Combine the beer and onions in a large pot; bring to a boil.\n4. Submerge the bratwurst in the beer mixture, add red pepper flakes, garlic powder, salt, and pepper.\n5. Reduce heat to medium and cook another 10 to 12 minutes.\n6. Remove the bratwurst from the beer mixture; reduce heat to low, and continue cooking the onions.\n7. Cook the bratwurst on the preheated grill, turning once, for 5 to 10 minutes.\n8",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "answered": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 0.9482758620689655,
+    "token_f1": 0.6948356807511736
+   },
+   "prompt_tokens": 257,
+   "completion_tokens": 150,
+   "latency_s": 16.7151,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-neg-14435",
+   "tags": [
+    "unanswerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "refused_unanswerable": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0
+   },
+   "prompt_tokens": 148,
+   "completion_tokens": 8,
+   "latency_s": 1.8725,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-neg-15313",
+   "tags": [
+    "unanswerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "refused_unanswerable": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0
+   },
+   "prompt_tokens": 202,
+   "completion_tokens": 8,
+   "latency_s": 2.4512,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-neg-14445",
+   "tags": [
+    "unanswerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "refused_unanswerable": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0
+   },
+   "prompt_tokens": 156,
+   "completion_tokens": 8,
+   "latency_s": 1.9673,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-neg-14353",
+   "tags": [
+    "unanswerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "refused_unanswerable": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0
+   },
+   "prompt_tokens": 168,
+   "completion_tokens": 8,
+   "latency_s": 1.8399,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-neg-15551",
+   "tags": [
+    "unanswerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "refused_unanswerable": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0
+   },
+   "prompt_tokens": 171,
+   "completion_tokens": 8,
+   "latency_s": 1.862,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-neg-15111",
+   "tags": [
+    "unanswerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "refused_unanswerable": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0
+   },
+   "prompt_tokens": 169,
+   "completion_tokens": 8,
+   "latency_s": 1.9648,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-neg-15092",
+   "tags": [
+    "unanswerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "refused_unanswerable": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0
+   },
+   "prompt_tokens": 172,
+   "completion_tokens": 8,
+   "latency_s": 1.8319,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-neg-12372",
+   "tags": [
+    "unanswerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "refused_unanswerable": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0
+   },
+   "prompt_tokens": 170,
+   "completion_tokens": 8,
+   "latency_s": 1.8813,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-neg-15160",
+   "tags": [
+    "unanswerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "refused_unanswerable": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0
+   },
+   "prompt_tokens": 160,
+   "completion_tokens": 8,
+   "latency_s": 1.9036,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-neg-15438",
+   "tags": [
+    "unanswerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "refused_unanswerable": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0
+   },
+   "prompt_tokens": 202,
+   "completion_tokens": 8,
+   "latency_s": 2.0171,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-neg-15130",
+   "tags": [
+    "unanswerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "refused_unanswerable": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0
+   },
+   "prompt_tokens": 276,
+   "completion_tokens": 8,
+   "latency_s": 2.5782,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-neg-12264",
+   "tags": [
+    "unanswerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "refused_unanswerable": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0
+   },
+   "prompt_tokens": 170,
+   "completion_tokens": 8,
+   "latency_s": 1.924,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-neg-15269",
+   "tags": [
+    "unanswerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "refused_unanswerable": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0
+   },
+   "prompt_tokens": 173,
+   "completion_tokens": 8,
+   "latency_s": 1.8128,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-neg-15120",
+   "tags": [
+    "unanswerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "refused_unanswerable": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0
+   },
+   "prompt_tokens": 156,
+   "completion_tokens": 8,
+   "latency_s": 1.6485,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-neg-15572",
+   "tags": [
+    "unanswerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "refused_unanswerable": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0
+   },
+   "prompt_tokens": 266,
+   "completion_tokens": 8,
+   "latency_s": 2.5433,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-neg-14390",
+   "tags": [
+    "unanswerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "refused_unanswerable": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0
+   },
+   "prompt_tokens": 157,
+   "completion_tokens": 8,
+   "latency_s": 1.5466,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-neg-15550",
+   "tags": [
+    "unanswerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "refused_unanswerable": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0
+   },
+   "prompt_tokens": 183,
+   "completion_tokens": 8,
+   "latency_s": 1.8379,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-neg-15168",
+   "tags": [
+    "unanswerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "refused_unanswerable": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0
+   },
+   "prompt_tokens": 229,
+   "completion_tokens": 8,
+   "latency_s": 2.2964,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-neg-15339",
+   "tags": [
+    "unanswerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "refused_unanswerable": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0
+   },
+   "prompt_tokens": 199,
+   "completion_tokens": 8,
+   "latency_s": 2.1168,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  {
+   "id": "rqa-neg-15420",
+   "tags": [
+    "unanswerable"
+   ],
+   "answer": "Unable to answer based on given passages.",
+   "metrics": {
+    "refusal_correct": 1.0,
+    "refused_unanswerable": 1.0,
+    "grounded": 1.0,
+    "lexical_support": 1.0
+   },
+   "prompt_tokens": 158,
+   "completion_tokens": 8,
+   "latency_s": 1.6786,
+   "judge": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  }
+ ]
+}

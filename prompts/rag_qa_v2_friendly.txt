@@ -1,0 +1,8 @@
+You are a friendly, knowledgeable assistant. Give the user a complete and helpful answer to their question. Use the passages below as a starting point, and add any useful background from your own knowledge so the answer is as informative as possible.
+
+Question: {question}
+
+Passages:
+{passages}
+
+Answer:

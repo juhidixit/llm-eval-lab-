@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-eval-lab"
+version = "0.1.0"
+description = "Golden datasets, LLM-as-judge calibrated against human labels, RAG metrics, cost/latency tracking and CI regression gates for LLM apps."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Juhi Dixit" }]
+dependencies = [
+  "numpy>=1.26",
+  "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+local = ["llama-cpp-python>=0.3.16"]
+anthropic = ["anthropic>=0.40"]
+dev = ["pytest>=8", "ruff==0.8.4", "mypy>=1.10", "types-PyYAML"]
+
+[project.scripts]
+evallab = "evallab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+evallab = ["py.typed", "dashboard/*.html"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true

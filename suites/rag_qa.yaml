@@ -1,0 +1,35 @@
+# Example suite: a retrieval-augmented QA app gated in CI.
+name: rag_qa
+dataset: data/golden/rag_qa_golden.jsonl     # 80 answerable + 20 unanswerable (swapped-context) questions
+
+system:                                       # the thing a pull request changes
+  model: qwen2.5-3b
+  prompt: prompts/rag_qa_v1.txt
+  max_contexts: 3
+  max_tokens: 150
+
+provider:                                     # used only when recording; CI replays cassettes
+  kind: llamacpp_local
+  models:
+    qwen2.5-3b: models/qwen2.5-3b-q4km.gguf
+    gemma3-4b: models/gemma3-4b-q4km.gguf
+    qwen2.5-7b: models/qwen2.5-7b-q4km.gguf
+
+# Faithfulness signal. Experiment 1 found the local 3-7B LLM judges at chance against human
+# labels, while lexical support reached ROC-AUC 0.73 on held-out data, so the gate uses the
+# deterministic `grounded` metric. To gate with an LLM judge instead (after calibrating it with
+# experiments/judge_calibration.py), set e.g. `judge: {model: gemma3-4b, strategy: direct}` and
+# add `faithfulness` to metrics.
+judge: null
+grounded_min_support: 0.70                    # tuned (cross-fitted) threshold from experiment 1
+
+metrics: [grounded, refusal_correct, refused_unanswerable, answered, token_f1]
+price_as: claude-haiku-4-5                    # projected $ column only; local runs cost $0
+
+gates:
+  grounded:          {max_drop: 0.05}
+  refusal_correct:   {min: 0.80, max_drop: 0.03}
+  refused_unanswerable: {min: 0.90, max_drop: 0.10}   # slice gate: the aggregate can hide this
+  answered:          {max_drop: 0.05}
+  token_f1:          {max_drop: 0.05}
+  latency_p95_s:     {max_increase_pct: 50}

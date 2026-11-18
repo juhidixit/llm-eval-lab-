@@ -1,0 +1,67 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - run: pip install -e ".[dev]"
+      - run: ruff check src tests experiments scripts
+      - run: ruff format --check src tests experiments scripts
+      - run: pytest
+
+  eval-gate:
+    # Replays the recorded LLM calls (cassettes/) so the gate is deterministic, free and needs no
+    # GPU or API key, yet every score comes from real model outputs. Changing a prompt or model
+    # without re-recording makes this job fail with a cache miss, by design.
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -e .
+      - name: Golden set integrity
+        run: evallab dataset info data/golden/rag_qa_golden.jsonl
+      - name: Run suite (replay)
+        run: evallab run suites/rag_qa.yaml --cache replay --out runs/candidate.json
+      - name: Gate candidate vs baseline
+        run: |
+          evallab gate --suite suites/rag_qa.yaml \
+            --baseline results/runs/baseline.json --candidate runs/candidate.json
+      - name: Gate self-test (known-bad changes must be blocked)
+        run: |
+          for v in v2_friendly_prompt v3_top1_context; do
+            evallab gate --suite suites/rag_qa.yaml --expect fail \
+              --baseline results/runs/baseline.json --candidate results/runs/$v.json
+          done
+
+  reproduce-judge-calibration:
+    # Recomputes the judge-calibration tables from the committed cassettes and fails if they
+    # differ from what the README reports.
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -e .
+      - run: python experiments/judge_calibration.py --cache replay --judges $(cat results/judge_calibration/JUDGES)
+      - run: python experiments/analyze_calibration.py
+      - run: git diff --exit-code results/judge_calibration/summary.md
