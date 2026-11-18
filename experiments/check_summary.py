@@ -19,8 +19,10 @@ def main() -> int:
     ap.add_argument("actual")
     ap.add_argument("--tol", type=float, default=0.03)
     a = ap.parse_args()
-    exp = open(a.expected).read().splitlines()
-    act = open(a.actual).read().splitlines()
+    with open(a.expected) as f:
+        exp = f.read().splitlines()
+    with open(a.actual) as f:
+        act = f.read().splitlines()
     if len(exp) != len(act):
         print(f"row count differs: {len(exp)} vs {len(act)}")
         return 1
